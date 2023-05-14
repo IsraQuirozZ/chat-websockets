@@ -10,7 +10,6 @@ const http_server = server.listen(PORT, ready);
 const socket_server = new Server(http_server);
 
 socket_server.on("connection", (socket) => {
-  console.log(socket.client.id);
   socket.on("auth", () => {
     socket_server.emit("all_messages", chats);
   });
