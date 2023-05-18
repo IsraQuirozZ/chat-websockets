@@ -12,7 +12,7 @@ const server = express();
 // Setting template engine
 server.engine("handlebars", engine());
 server.set("view engine", "handlebars");
-server.set("views", __dirname, +"/views");
+server.set("views", __dirname + "/views");
 
 // Setting middlewares
 server.use("/public", express.static("public"));

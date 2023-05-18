@@ -15,11 +15,12 @@ Swal.fire({
 let chatbox = document.getElementById("chatBox");
 chatbox.addEventListener("keyup", send);
 
-const send = (e) => {
+function send(e) {
   if (e.key === "Enter") {
     socket.emit("new_message", { userName, message: chatbox.value });
+    chatbox.value = "";
   }
-};
+}
 
 socket.on("all_messages", (data) => {
   document.getElementById("messages").innerHTML = data
